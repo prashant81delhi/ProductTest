@@ -6,13 +6,13 @@ using ProductsApi.Models;
 namespace ProductsApi.Controllers
 {
     [ApiController]
-    [Route("api/products")]
-    public class ProductsController : ControllerBase
+    [Route("[controller]")]
+    public class ProductsApiController : ControllerBase
     {
 
         private readonly IJsonRepository<Product> _repository;
 
-        public ProductsController(IJsonRepository<Product> repository)
+        public ProductsApiController(IJsonRepository<Product> repository)
         {
             _repository = repository;
         }

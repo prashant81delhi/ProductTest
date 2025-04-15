@@ -26,7 +26,7 @@ namespace ProductsControllerTests
         public async Task GetAllProducts_ReturnsOkResult_WithListOfProducts()
         {
             // Act
-            var response = await _client.GetAsync("/api/products");
+            var response = await _client.GetAsync("/ProductsApi");
 
             // Assert
             response.EnsureSuccessStatusCode();  // Status Code 200-299
@@ -43,7 +43,7 @@ namespace ProductsControllerTests
             var content = new StringContent(JsonConvert.SerializeObject(newProduct), Encoding.UTF8, "application/json");
 
             // Act
-            var response = await _client.PostAsync("/api/products", content);
+            var response = await _client.PostAsync("/ProductsApi", content);
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -55,7 +55,7 @@ namespace ProductsControllerTests
         public async Task GetProductsByColour_ReturnsOkResult_WithFilteredProducts()
         {
             // Act
-            var response = await _client.GetAsync("/api/products/colour/Red");
+            var response = await _client.GetAsync("/ProductsApi/colour/Red");
 
             // Assert
             response.EnsureSuccessStatusCode();

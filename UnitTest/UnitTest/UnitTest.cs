@@ -11,13 +11,13 @@ namespace ProductsControllerTests
         public class UnitTest
         {
             private Mock<IJsonRepository<Product>> _mockRepo;
-            private ProductsController _controller;
+            private ProductsApiController _controller;
 
             [SetUp]
             public void Setup()
             {
                 _mockRepo = new Mock<IJsonRepository<Product>>(); // Pass mock file path
-                _controller = new ProductsController(_mockRepo.Object);  // Inject the mocked repo
+                _controller = new ProductsApiController(_mockRepo.Object);  // Inject the mocked repo
             }
 
             // Unit Test: Get all products
